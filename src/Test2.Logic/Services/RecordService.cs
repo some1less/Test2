@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Test2.DAL.context;
 using Test2.DAL.models;
 using Test2.Logic.DTO;
+using Task = Test2.DAL.models.Task;
 
 namespace Test2.Logic.Services;
 
@@ -61,7 +62,7 @@ public class RecordService : IRecordService
         }
         else
         {
-            throw new KeyNotFoundException($"Task with id={dto.TaskId} not found");
+            throw new KeyNotFoundException($"Task with id={dto.TaskId} and provided data not found");
         }
 
         Record record = new Record()
@@ -69,7 +70,11 @@ public class RecordService : IRecordService
             LanguageId = dto.LanguageId,
             TaskId = dto.TaskId,
             StudentId = dto.StudentId,
-            Task = task,
+            Task = new Task()
+            {
+                Name = dto.Task.Name,
+                Description = dto.Task.Description,
+            },
             ExecutionTime = dto.ExecutionTime,
             CreatedAt = dto.CreatedAt,
         };

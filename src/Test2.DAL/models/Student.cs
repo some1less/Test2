@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace Test2.DAL.models;
 
 public class Student
@@ -7,6 +9,7 @@ public class Student
     public string LastName { get; set; }
     public string Email { get; set; }
     
+    [JsonIgnore]
     public virtual ICollection<Record> Records { get; set; } = new List<Record>();
 
 }
