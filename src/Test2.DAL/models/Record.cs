@@ -16,7 +16,7 @@ public class Record
     public int StudentId { get; set; }
     public Student Student { get; set; } = null!;
     
-    public BigInteger ExecutionTime { get; set; }
+    public long ExecutionTime { get; set; }
     public DateTime CreatedAt { get; set; }
 
 

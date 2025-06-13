@@ -15,8 +15,15 @@ public partial class RecordManiaContext : DbContext
     public DbSet<Student> Students { get; set; }
     public DbSet<Task> Tasks { get; set; }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        
+    }
+
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        
         modelBuilder.Entity<Language>(entity =>
         {
             entity.ToTable("Language");

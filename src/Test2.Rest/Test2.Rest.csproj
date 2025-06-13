@@ -12,8 +12,22 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.17" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.17" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.17">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Controllers\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Test2.DAL\Test2.DAL.csproj" />
+        <ProjectReference Include="..\Test2.Logic\Test2.Logic.csproj" /></ItemGroup>
 
 </Project>
