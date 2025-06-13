@@ -50,6 +50,10 @@ namespace Test2.Rest.Controllers
                 var created = await _recordService.CreateRecordAsync(record);
                 return CreatedAtAction(nameof(GetRecords), new { id = created.Id }, created);
             }
+            catch (KeyNotFoundException e)
+            {
+                return NotFound(e.Message);
+            }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
